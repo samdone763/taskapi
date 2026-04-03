@@ -15,3 +15,7 @@ class User(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     tasks = relationship("Task", back_populates="owner")
+    products = relationship("Product", back_populates="owner")
+    sales = relationship("Sale", back_populates="owner")
+    employees = relationship("Employee", back_populates="owner")
+    expenses = relationship("Expense", back_populates="owner")
