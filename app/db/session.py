@@ -1,5 +1,8 @@
-from psycopg2cffi import compat
-compat.register()
+try:
+    from psycopg2cffi import compat
+    compat.register()
+except ImportError:
+    pass
 
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
